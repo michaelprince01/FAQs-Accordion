@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'workSansRegular';
+  src: url('./assets/fonts/WorkSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'workSansBold';
+  src: url('./assets/fonts/WorkSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'workSansSemiBold';
+  src: url('./assets/fonts/WorkSans-SemiBold.ttf') format('truetype');
+}
+
+:root {
+  --primary-color: hsl(292, 42%, 14%);
+  --secondary-color: hsl(292, 16%, 49%);
+  --line-color: hsl(275, 100%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'workSansRegular', sans-serif;
+  background-color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+.background-pattern {
+  align-self: flex-start;
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  max-width: 600px;
+  height: 65%;
+  margin-top: -12%;
+  padding: 2.2em;
+  border-radius: 15px;
+  box-shadow: 0px 0 20px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.accordion-title {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.accordion-title h1 {
+  font-size: 2.5em;
+  font-family: 'workSansBold';
+}
+
+.accordion-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 10px 0;
+  position: relative;
+}
+
+.header-icon-minus {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.accordion-item-title {
+  font-size: 1.125rem;
+  color: var(--primary-color);
+  font-family: 'workSansbold';
+}
+
+.accordion-item-title:hover {
+  color: rgb(207, 35, 207);
+}
+
+.accordion-item-body {
+  color: var(--secondary-color);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.divider {
+  background-color: var(--line-color);
+  height: 2px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* For Javascript use */
+
+.accordion-item-header.active > .header-icon-minus {
+  opacity: 1;
+}
